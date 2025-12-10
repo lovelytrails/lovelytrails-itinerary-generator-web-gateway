@@ -21,7 +21,13 @@ async function bootstrap() {
 
   await server.start();
 
-  app.use(cors());
+  const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || ['*'];
+  const corsData = {
+        origin: allowedOrigins,
+        credentials: true,
+      };
+
+  app.use(cors(corsData));
   app.use(express.json()); // ✅ parse JSON bodies
 
   app.use(
