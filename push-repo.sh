@@ -20,4 +20,4 @@ git checkout master
 echo "Pushing changes to the remote branch: master"
 git push -u origin master
 
-echo "All done!"
+echo "All done!!"
